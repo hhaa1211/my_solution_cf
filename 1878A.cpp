@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    int t; cin >> t;
+    while (t--){
+        int n, k; cin >> n >> k;
+        int flag = 0;
+        for (int i=0; i<n; i++){
+            int x; cin >> x;
+            if (x==k){
+                flag = 1;
+            }
+        }
+        if (flag){
+            cout << "YES\n";
+        } else{
+            cout << "NO\n";
+        }
+    }
+}

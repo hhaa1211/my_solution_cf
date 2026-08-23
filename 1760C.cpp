@@ -1,0 +1,31 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
+    int t; cin >> t;
+    while (t--){
+        int n; cin >> n;
+        int a[n]; 
+        int sl1 = 1, sl2 = 1;
+        for (int i=0; i<n; i++){
+            cin >> a[i];
+            if (a[i]>=sl1){
+                sl2 = sl1;
+                sl1 = a[i];
+            } else if (a[i]>sl2){
+                sl2 = a[i];
+            }
+        }
+        for (int i=0; i<n; i++){
+            if (a[i]==sl1){
+                cout << a[i]-sl2 << ' ';
+            } else{
+                cout << a[i]-sl1 << ' ';
+            }
+        }
+        cout << '\n';
+    }
+}
